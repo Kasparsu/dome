@@ -25,7 +25,7 @@ ENGINE_writeToLogFile(ENGINE* engine, const char* buffer) {
 internal void
 ENGINE_writeToLog(ENGINE* engine, const char* buffer) {
   // Output to console
-  sprintf("%s", buffer);
+  sprintf(buffer,"%s");
   ENGINE_writeToLogFile(engine, buffer);
 }
 
