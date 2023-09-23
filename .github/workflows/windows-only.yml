@@ -28,7 +28,7 @@ jobs:
 
     - run: git fetch --prune --unshallow
     - run: gcc -v
-    - run: "make STATIC=1 TARGET_NAME=dome CC=gcc"
+    - run: "make STATIC=1 TARGET_NAME=dome CC=gcc CFLAGS=-mwindows"
     - uses: actions/upload-artifact@v3
       if: ${{ (matrix.msystem == 'MINGW32') }}
       with:
