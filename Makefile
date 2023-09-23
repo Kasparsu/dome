@@ -101,7 +101,7 @@ else ifneq ($(filter linux,$(TAGS)),)
 endif
 
 
-CFLAGS = $(DOME_OPTS) -std=c99 -pedantic $(WARNING_FLAGS) -fvisibility=hidden -mwindows
+CFLAGS = $(DOME_OPTS) -std=c99 -pedantic $(WARNING_FLAGS) -fvisibility=hidden -mconsole
 ifneq ($(filter linux,$(TAGS)),)
 CFLAGS += -D_XOPEN_SOURCE=500
 else ifneq ($(filter macosx,$(TAGS)),)
