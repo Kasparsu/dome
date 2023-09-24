@@ -276,7 +276,7 @@ int main(int argc, char* argv[])
     }
 //}
 
-  fprintf(stderr,"%d", (getenv("WT_SESSION") || strcmp(getenv("SESSIONNAME"),"Console") == 0 && !getenv("SHELL")) || getenv("TERM_PROGRAM") == "Tabby"));
+  fprintf(stderr,"%d", (getenv("WT_SESSION") || strcmp(getenv("SESSIONNAME"),"Console") == 0 && !getenv("SHELL")) || getenv("TERM_PROGRAM") == "Tabby");
     fprintf(stderr,"%d", (strcmp(getenv("SESSIONNAME"),"Console") == 0 && !getenv("SHELL")));
     fprintf(stderr,"%d", strcmp(getenv("SESSIONNAME"),"Console") == 0);
     fprintf(stderr,"%s", getenv("SESSIONNAME"));
