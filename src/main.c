@@ -279,6 +279,7 @@ int main(int argc, char* argv[])
   fprintf(stderr,"%d", (getenv("WT_SESSION") || (getenv("SESSIONNAME") == "Console" && !getenv("SHELL")) || getenv("TERM_PROGRAM") == "Tabby"));
     fprintf(stderr,"%d", (getenv("SESSIONNAME") == "Console" && !getenv("SHELL")));
     fprintf(stderr,"%d", (getenv("SESSIONNAME") == "Console"));
+    fprintf(stderr,"%s", getenv("SESSIONNAME"));
 fprintf(stderr,"%d", (!getenv("SHELL")));
   // configuring the buffer has to be first
 
