@@ -273,10 +273,7 @@ int main(int argc, char* argv[])
     freopen("CONOUT$","wb",stderr);
     
     HANDLE stdOutConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    if (INVALID_HANDLE_VALUE) {
-      engine.logColor = false;
-    } else {
-      engine.logColor = true;
+    if (!INVALID_HANDLE_VALUE) {  
       SetConsoleMode(stdOutConsole,
           ENABLE_PROCESSED_OUTPUT ||
           ENABLE_VIRTUAL_TERMINAL_PROCESSING ||
