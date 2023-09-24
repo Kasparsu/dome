@@ -1,16 +1,12 @@
-#include <windows.h>
+#include <stdio.h>
+
+int main() {
+   setvbuf (stdout, NULL, _IONBF, 0);
 
 
-int main()
-{
-    HANDLE std_out = GetStdHandle(STD_OUTPUT_HANDLE);
-    if (std_out == INVALID_HANDLE_VALUE) {
-        return 66;
-    }
-    //AttachConsole(ATTACH_PARENT_PROCESS);
-    if (!WriteConsole(std_out, "Hello World!", 12, NULL, NULL)) {
-        return 67;
-    }
-
+   /* my first program in C */
+   printf("Hello, World! \n");
+   fprintf(stderr, "Hello, please enter your age\n");
+   fflush( stdout );
    return 0;
 }
