@@ -269,15 +269,13 @@ char* resolveEntryPath(ENGINE* engine, char* entryArgument, bool autoResolve) {
 int main(int argc, char* argv[])
 {
   // WT_SESSION = Windows terminal, SESSIONNAME=Console == Powershell and CMD and TERM_PROGRAM=Tabby == Tabby
-  // if(getenv("WT_SESSION") || getenv("SESSIONNAME") == "Console" || getenv("TERM_PROGRAM") == "Tabby") {
+if(getenv("WT_SESSION") || getenv("SESSIONNAME") == "Console" && !getenv("SHELL") || getenv("TERM_PROGRAM") == "Tabby") {
     if (AttachConsole(ATTACH_PARENT_PROCESS)) { 
       freopen("CONOUT$","wb",stdout);
       freopen("CONOUT$","wb",stderr);
     }
-  // }
-  printf(getenv("SESSIONNAME"));
-  printf(getenv("TERM_PROGRAM"));
-  printf(getenv("WT_SESSION"));
+}
+
   // configuring the buffer has to be first
 
   setbuf(stdout, NULL);
