@@ -279,8 +279,8 @@ if(getenv("WT_SESSION") || (strcmp(getenv("SESSIONNAME"),"Console") == 0 && !get
 }
 
 
-  fprintf(stderr,"%s", stdOutConsole);
-  fprintf(stderr,"%s", myconsole);
+  fprintf(stderr,"%d", stdOutConsole);
+  fprintf(stderr,"%d", myconsole);
     
   // configuring the buffer has to be first
 
