@@ -268,18 +268,11 @@ char* resolveEntryPath(ENGINE* engine, char* entryArgument, bool autoResolve) {
 
 int main(int argc, char* argv[])
 {
-  if (AttachConsole(ATTACH_PARENT_PROCESS)) {
-    freopen("CONOUT$","wb",stdout);
-    freopen("CONOUT$","wb",stderr);
-    
-    HANDLE stdOutConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    if (!INVALID_HANDLE_VALUE) {  
-      SetConsoleMode(stdOutConsole,
-          ENABLE_PROCESSED_OUTPUT ||
-          ENABLE_VIRTUAL_TERMINAL_PROCESSING ||
-          ENABLE_WRAP_AT_EOL_OUTPUT ||
-          DISABLE_NEWLINE_AUTO_RETURN
-      );
+  if(getenv("WT_SESSION")) {
+    if (AttachConsole(ATTACH_PARENT_PROCESS)) {
+      freopen("CONOUT$","wb",stdout);
+      freopen("CONOUT$","wb",stderr);
+      
     }
   }
   // configuring the buffer has to be first
