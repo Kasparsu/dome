@@ -275,7 +275,11 @@ int main(int argc, char* argv[])
       freopen("CONOUT$","wb",stderr);
     }
 //}
+
   fprintf(stderr,"%d", (getenv("WT_SESSION") || (getenv("SESSIONNAME") == "Console" && !getenv("SHELL")) || getenv("TERM_PROGRAM") == "Tabby"));
+    fprintf(stderr,"%d", (getenv("SESSIONNAME") == "Console" && !getenv("SHELL")));
+    fprintf(stderr,"%d", (getenv("SESSIONNAME") == "Console"));
+fprintf(stderr,"%d", (!getenv("SHELL")));
   // configuring the buffer has to be first
 
   setbuf(stdout, NULL);
