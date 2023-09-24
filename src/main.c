@@ -268,7 +268,7 @@ char* resolveEntryPath(ENGINE* engine, char* entryArgument, bool autoResolve) {
 
 int main(int argc, char* argv[])
 {
-  AttachConsole(ATTACH_PARENT_PROCESS)
+  AttachConsole(ATTACH_PARENT_PROCESS);
   // configuring the buffer has to be first
 
   setbuf(stdout, NULL);
